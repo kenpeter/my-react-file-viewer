@@ -1,24 +1,36 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import FileViewer from 'react-file-viewer';
+import {CustomErrorComponent} from 'custom-error';
 
-function App() {
+function App () {
+  // docx, format loss
+  // https://github.com/plangrid/react-file-viewer/issues/90
+  //const file = 'http://localhost:3000/demo_formate_loss_in_web.docx';
+  //const type = 'docx';
+
+  // docx, again format lossing
+  // https://github.com/plangrid/react-file-viewer/issues/90
+  //const file = 'http://localhost:3000/example.docx';
+  //const type = 'docx';
+
+  //
+  const file = '5000_rows.xlsx';
+  const type = 'xlsx';
+
+  const onError = e => {
+    console.error (e);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <FileViewer
+        fileType={type}
+        filePath={file}
+        errorComponent={CustomErrorComponent}
+        onError={onError}
+      />
+      );
+
     </div>
   );
 }
