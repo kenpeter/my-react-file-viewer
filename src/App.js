@@ -10,12 +10,12 @@ function App () {
 
   // docx, again format lossing
   // https://github.com/plangrid/react-file-viewer/issues/90
-  //const file = 'http://localhost:3000/example.docx';
-  //const type = 'docx';
+  const file = 'http://localhost:3000/example.docx';
+  const type = 'docx';
 
-  //
-  const file = '5000_rows.xlsx';
-  const type = 'xlsx';
+  // custom make
+  //const file = '5000_rows.xlsx';
+  //const type = 'xlsx';
 
   const onError = e => {
     console.error (e);
